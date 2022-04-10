@@ -10,3 +10,5 @@
 2. 라이브러리 관리 - ${GO_HOME}/src/
 3. 예시 src/github.com/go_library_name 형식
 
+### Go 파일 실행
+1. go run main.go
