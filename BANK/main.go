@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
-	account := banking.Account{Owner: "yena", Balance: 1000}
+	//account := banking.Account{Owner: "yena"}
+	account := banking.NewAccount("sumin")
 	fmt.Println(account)
 }
