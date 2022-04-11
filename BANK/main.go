@@ -1,8 +1,9 @@
 package main
 
 import (
-	"D:/04_study/golanggolang/BANK/banking"
 	"fmt"
+
+	"github.com/n3n33/golanggolang/BANK/banking"
 )
 
 func main() {
