@@ -1,28 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func main() {
-	//fmt.Println("Hello World!")
-	const name string = "Constant" // now no type --> looks like boring
-	// Go is type language
-	// Go try to guess the type
-	// you need to tell go What is what
+//Need to tell compiler what everything is
+// making faster for you
 
-	// name = "Try to Change"
-	// connat assign to name
-	// name is Constans
-	fmt.Println(name)
-
-	//var varname string = "Variable"
-	// Go is going to guess type for you
-	varname := "Variable"
-	// Variables can change
-	varname = "Try to change"
-	fmt.Println(varname)
+func multiply(a, b int) int {
+	return a * b
 }
 
-//Main for compile
+//functions have multiple values return
+func lenAndUpper(name string) (int, string) {
+	return len(name), strings.ToUpper(name)
+}
 
-// Constant is Variable but can not change. -> immutable
-// Varable is Variable. Can change
+func repeatMe(words ...string) {
+	fmt.Println(words)
+}
+
+func main() {
+	fmt.Println(multiply(2, 2))
+	totalLength, upperName := lenAndUpper("yena")
+	// totalLength, _ := lenAndUpper("yena")
+	// Underscore is ignore value
+	// Compiler is ignoring that
+	fmt.Println(totalLength, upperName)
+	//fmt.Println(totalLength)
+
+	repeatMe("yy", "ee", "nn", "aa")
+}
