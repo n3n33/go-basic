@@ -1,22 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
-// naked return
-func lenAndUpper(name string) (length int, uppercase string) {
-	// Execute code after the function returns
-	// ex : close file, images, send request rest API
-	defer fmt.Println("I'm done")
-	//return len(name), strings.ToUpper(name)
-	length = len(name) // length is not new
-	uppercase = strings.ToUpper(name)
-	return
+func superAdd(numbers ...int) int {
+	// range gives the index
+	// loops with range
+	for index, number := range numbers {
+		fmt.Println(index, number)
+	} //left column is index, right column is number
+	return 1
 }
+
+func superAdd2(numbers2 ...int) int {
+	for i := 0; i < len(numbers2); i++ {
+		fmt.Println(numbers2[i])
+	}
+	return 1
+}
+
 func main() {
-	totalLength, up := lenAndUpper("yena")
-	// run defer after execute func lenAndUppser
-	fmt.Print(totalLength, up)
+	superAdd(1, 2, 3, 4, 5, 6)
+	superAdd2(1, 2, 3, 4, 5, 6)
 }
