@@ -5,30 +5,18 @@ import (
 	"strings"
 )
 
-//Need to tell compiler what everything is
-// making faster for you
-
-func multiply(a, b int) int {
-	return a * b
+// naked return
+func lenAndUpper(name string) (length int, uppercase string) {
+	// Execute code after the function returns
+	// ex : close file, images, send request rest API
+	defer fmt.Println("I'm done")
+	//return len(name), strings.ToUpper(name)
+	length = len(name) // length is not new
+	uppercase = strings.ToUpper(name)
+	return
 }
-
-//functions have multiple values return
-func lenAndUpper(name string) (int, string) {
-	return len(name), strings.ToUpper(name)
-}
-
-func repeatMe(words ...string) {
-	fmt.Println(words)
-}
-
 func main() {
-	fmt.Println(multiply(2, 2))
-	totalLength, upperName := lenAndUpper("yena")
-	// totalLength, _ := lenAndUpper("yena")
-	// Underscore is ignore value
-	// Compiler is ignoring that
-	fmt.Println(totalLength, upperName)
-	//fmt.Println(totalLength)
-
-	repeatMe("yy", "ee", "nn", "aa")
+	totalLength, up := lenAndUpper("yena")
+	// run defer after execute func lenAndUppser
+	fmt.Print(totalLength, up)
 }
