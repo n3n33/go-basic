@@ -10,4 +10,6 @@ func main() {
 	//account := banking.Account{Owner: "yena"}
 	account := banking.NewAccount("sumin")
 	fmt.Println(account)
+	account.Deposit(10)
+	fmt.Println(account.Balance())
 }
