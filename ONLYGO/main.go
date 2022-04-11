@@ -2,10 +2,16 @@ package main
 
 import "fmt"
 
+//struct are like object and flexible than map
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
+
 func main() {
-	nico := map[string]string{"name": "nico", "age": "12"} // key-value
+	favFood := []string{"kimch", "ramen"}
+	nico := person{"nico", 18, favFood}
 	fmt.Println(nico)
-	for key, value := range nico {
-		fmt.Println(key, value)
-	}
+	fmt.Println(nico.name)
 }
