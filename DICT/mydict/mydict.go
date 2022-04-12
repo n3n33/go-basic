@@ -7,6 +7,7 @@ type Dictionary map[string]string
 
 var errNotFound = errors.New("Not Found")
 var errWordExists = errors.New("That word already exists")
+var errCantUpdate = errors.New("Cant update on existing word")
 
 // Search for a word
 func (d Dictionary) Search(word string) (string, error) {
@@ -27,4 +28,19 @@ func (d Dictionary) Add(word, def string) error {
 		return errWordExists
 	}
 	return nil
+}
+
+func (d Dictionary) Update(word, definition string) error {
+	_, err := d.Search(word)
+	switch err {
+	case errNotFound:
+		d[word] = definition
+	case nil:
+		return errCantUpdate
+	}
+	return nil
+}
+
+func (d Dictionary) Delete(word string) {
+	delete(d, word)
 }
